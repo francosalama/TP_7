@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentEncendido">
+
+    <ImageView
+        android:id="@+id/ivEncendido"
+        android:layout_width="173dp"
+        android:layout_height="198dp"
+        android:src="@drawable/encendido"
+        app:layout_constraintBottom_toTopOf="@+id/ivBotonEncendido"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.27" />
+
+    <ImageView
+        android:id="@+id/ivLinternaEncendida"
+        android:layout_width="161dp"
+        android:layout_height="259dp"
+        android:layout_marginStart="77dp"
+        android:src="@drawable/linterna_prendida"
+        app:layout_constraintBottom_toTopOf="@+id/ivBotonEncendido"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/ivEncendido"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/ivBotonEncendido"
+        android:layout_width="183dp"
+        android:layout_height="305dp"
+        android:layout_marginBottom="36dp"
+        android:src="@drawable/boton"
+        app:layout_constraintBottom_toTopOf="@+id/btnSeteosEncendido"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnSeteosEncendido"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="seteos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
