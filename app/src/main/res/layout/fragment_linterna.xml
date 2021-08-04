@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentApagado">
+    tools:context=".FragmentLinterna">
 
     <ImageView
         android:id="@+id/ivApagado"
@@ -13,19 +13,19 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="32dp"
         android:src="@drawable/apagado"
-        app:layout_constraintBottom_toTopOf="@+id/ivBotonApagado"
+        app:layout_constraintBottom_toTopOf="@+id/ivBoton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.232" />
 
     <ImageView
-        android:id="@+id/ivLinternaApagada"
+        android:id="@+id/ivLinterna"
         android:layout_width="141dp"
         android:layout_height="262dp"
         android:layout_marginStart="107dp"
         android:layout_marginEnd="4dp"
         android:src="@drawable/linterna_apagada"
-        app:layout_constraintBottom_toTopOf="@+id/ivBotonApagado"
+        app:layout_constraintBottom_toTopOf="@+id/ivBoton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/ivApagado"
@@ -33,17 +33,17 @@
         app:layout_constraintVertical_bias="0.333" />
 
     <ImageView
-        android:id="@+id/ivBotonApagado"
+        android:id="@+id/ivBoton"
         android:layout_width="189dp"
         android:layout_height="272dp"
         android:layout_marginBottom="101dp"
         android:src="@drawable/boton"
-        app:layout_constraintBottom_toTopOf="@+id/btnSeteosApagado"
+        app:layout_constraintBottom_toTopOf="@+id/btnSeteos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btnSeteosApagado"
+        android:id="@+id/btnSeteos"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="seteos"
@@ -51,4 +51,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/ivBoton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivBoton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

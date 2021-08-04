@@ -9,8 +9,7 @@ import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
-    FragmentApagado fragmentApagado;
-    FragmentEncendido fragmentEncendido;
+    FragmentLinterna fragmentLinterna;
     FragmentSeteos fragmentSeteos;
 
     @Override
@@ -18,12 +17,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         CrearFragments();
-        IrAlFragmentApagado();
+        IrAlFragmentLinterna();
     }
 
     private void CrearFragments(){
-        fragmentApagado = new FragmentApagado();
-        fragmentEncendido = new FragmentEncendido();
+        fragmentLinterna = new FragmentLinterna();
         fragmentSeteos = new FragmentSeteos();
     }
 
@@ -37,14 +35,9 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
-    public void IrAlFragmentApagado(){
-        ReemplazarFragment(fragmentApagado);
+    public void IrAlFragmentLinterna(){
+        ReemplazarFragment(fragmentLinterna);
     }
-
-    public void IrAlFragmentEncendido(){
-        ReemplazarFragment(fragmentEncendido);
-    }
-
     public void IrAlFragmentSeteos(){
         ReemplazarFragment(fragmentSeteos);
     }

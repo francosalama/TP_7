@@ -1,5 +1,7 @@
 package com.example.tp7;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -27,7 +29,9 @@ public class FragmentSeteos extends Fragment {
         layoutRoot = inflater.inflate(R.layout.fragment_seteos, container, false);
 
         ObtenerReferencias();
-        //SetearListeners();
+        SetearListeners();
+
+
 
         return layoutRoot;
     }
@@ -36,4 +40,23 @@ public class FragmentSeteos extends Fragment {
         edTelefono = (EditText) layoutRoot.findViewById(R.id.edTelefono);
         btnGuardar = (Button) layoutRoot.findViewById(R.id.btnGuardar);
     }
+
+    private void SetearListeners(){
+        btnGuardar.setOnClickListener(btnGuardar_Click);
+    }
+
+    View.OnClickListener btnGuardar_Click = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            SharedPreferences sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
+            SharedPreferences.Editor myEdit = sharedPreferences.edit();
+            myEdit.putInt("telefono", Integer.parseInt(edTelefono.getText().toString()));
+            myEdit.commit();
+
+            MainActivity actividadContenedora;
+            actividadContenedora = (MainActivity) getActivity();
+            assert actividadContenedora != null;
+            actividadContenedora.IrAlFragmentLinterna();
+        }
+    };
 }
