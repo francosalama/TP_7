@@ -1,12 +1,17 @@
 package com.example.tp7;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraManager;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -70,6 +75,7 @@ public class FragmentLinterna extends Fragment {
     private void SetearListeners(){
         ivApagado.setOnClickListener(ivApagado_Click);
         btnSeteos.setOnClickListener(btnSeteosApagado_Click);
+        ivBoton.setOnClickListener(ivBoton_Click);
     }
 
     View.OnClickListener ivApagado_Click = new View.OnClickListener() {
@@ -86,6 +92,14 @@ public class FragmentLinterna extends Fragment {
                 encendido = false;
                 switchFlashLight(encendido);
             }
+        }
+    };
+
+    View.OnClickListener ivBoton_Click = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + tvTel.getText().toString()));
+            startActivity(intent);
         }
     };
 
