@@ -49,7 +49,7 @@ public class FragmentLinterna extends Fragment {
         SetearListeners();
 
         SharedPreferences sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
-        int telefono = sharedPreferences.getInt("telefono", 0);
+        int telefono = sharedPreferences.getInt("telefono", 911);
         tvTel.setText(String.valueOf(telefono));
 
         boolean isFlashAvailable = getContext().getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH);
