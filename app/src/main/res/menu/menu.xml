@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_seteos"
+        android:title="SETEOS" />
+    <item
+        android:id="@+id/action_linterna"
+        android:title="LINTERNA" />
+</menu>
