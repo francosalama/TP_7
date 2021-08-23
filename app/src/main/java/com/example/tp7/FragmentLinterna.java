@@ -7,6 +7,8 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraManager;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -32,6 +34,12 @@ public class FragmentLinterna extends Fragment {
     TextView tvTel;
     boolean encendido = false;
 
+    SoundPool soundPool;
+
+    int sonidoEncendido;
+    int sonidoApagado;
+
+
     private CameraManager mCameraManager;
     private String mCameraId;
 
@@ -47,6 +55,10 @@ public class FragmentLinterna extends Fragment {
 
         ObtenerReferencias();
         SetearListeners();
+
+        soundPool = new SoundPool( 5, AudioManager.STREAM_MUSIC , 0);
+        sonidoEncendido = soundPool.load(getContext(),R.raw.encendido,1);
+        sonidoApagado = soundPool.load(getContext(),R.raw.apagado,1);
 
         SharedPreferences sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
         int telefono = sharedPreferences.getInt("telefono", 911);
@@ -85,11 +97,13 @@ public class FragmentLinterna extends Fragment {
                 ivApagado.setImageResource(R.drawable.encendido);
                 ivLinterna.setImageResource(R.drawable.linterna_prendida);
                 encendido = true;
+                soundPool.play(sonidoEncendido, 1, 1, 0, 0, 1);
                 switchFlashLight(encendido);
             } else{
                 ivApagado.setImageResource(R.drawable.apagado);
                 ivLinterna.setImageResource(R.drawable.linterna_apagada);
                 encendido = false;
+                soundPool.play(sonidoApagado, 1, 1, 0, 0, 1);
                 switchFlashLight(encendido);
             }
         }
